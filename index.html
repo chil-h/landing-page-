@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan HTML - Landing Page Sederhana</title>
+    <style>
+        body{
+            background-color: #413f3f;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            overflow-x: hidden;
+            margin-right: 15px;
+        }
+        header{
+            background-color: #413f3f;
+            color: rgb(8, 7, 7);
+            padding: 10px 20px;
+            margin-right: 10px;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            margin: -15px;
+            height: 30px;
+            position: fixed;
+        
+        }
+        header h2{
+            font-size: 10px;
+            color: #f0f0f0;
+            margin: 2px 0;
+        }
+        header nav{
+            margin-left: auto;
+            text-align: right;
+        }
+        header a {
+            margin-right: 20px;
+            color: white; 
+            text-decoration: none;
+            font-size: 10px;
+            
+        }
+
+        header a:hover{
+            background-color: #b3a6a6;
+            color: rgb(0, 0, 0);
+            border-radius: 16px;
+            padding: 8px;
+        }
+
+        #home{
+            padding: 20px 20px; 
+            color: #ffffff;
+            background-image: url(remove.png);
+            margin-bottom: 15px;
+            background-position: right top;
+            background-repeat: no-repeat;
+            background-size: auto;
+            height: 70vh;
+            width: 100%;
+            
+        }
+        #home h2{
+            margin-top: 100px;
+        }
+        #home h3{
+            color: #ffffff;
+            text-shadow: 1px 1px 3px gray;
+            margin-top: -15px;
+        }
+        #home p{
+            margin-top: -10px;
+            font-weight: 300!important;
+            margin-bottom: 15px;
+        }
+
+        #home button{
+            background-color: #9da1a7;
+            border: none;
+            box-shadow: 1px 2px 2px rgba(255, 255, 255, 0.705);
+            border-radius: 20px;
+            padding: 12px;
+            margin-bottom: 20px;
+            
+        }
+        #home button:hover{
+            transform: scale(1.02);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #c9d3cc;
+        }
+        
+        #about{
+            
+            width: 100%;
+            padding: 30px 20px; 
+            display: block;
+            color: #f0f0f0;
+        }
+
+        #about h2{
+            margin-top: 100px;
+            margin-bottom: 9px;
+        }
+        #about p{
+            margin-top: -7px;
+            font-weight: 300!important;
+        }
+
+        #about .tentang{
+            width: 100%;
+            margin-right: 10px;
+            height: fit-content;
+            justify-content: center;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #about .tentang .satu{
+            width: 300px;
+            background-color:#5a5353;
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0 15px;
+            margin-bottom: 9px;
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            flex-basis: 200px;
+            flex-grow: 1;
+        }
+
+        #about .tentang .dua{
+            width: 300px;
+            background-color:#5a5353;
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0 15px;
+            margin-bottom: 9px;
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            flex-basis: 200px;
+            flex-grow: 1;
+        }
+        #about .tentang .tiga{
+            width: 300px;
+            background-color:#5a5353;
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0 15px;
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            flex-basis: 200px;
+            flex-grow: 1;
+        }
+
+        #about .tentang .satu:hover{
+            transform: scale(1.04);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+        #about .tentang .dua:hover{
+            transform: scale(1.04);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+        #about .tentang .tiga:hover{
+            transform: scale(1.04);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+
+        #services{
+            padding: 30px 20px; 
+            background-color: #413f3f;
+            color: #f0f0f0;
+            width: 100%;
+        }
+
+        #services .layanan{
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap;
+        }
+        #services p{
+            margin-top: -15px;
+            font-weight: 300!important;
+        }
+
+        #services .layanan .satuu, .duaa, .tigaa, .empat{
+            background-color: #5a5353; 
+            border-radius: 15px;
+            border: 1px solid white;
+            color: white;
+            margin: 15px; 
+            padding: 13px; 
+            width: 200px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        
+        #services .layanan .satuu:hover{
+            transform: scale(1.06);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+        #services .layanan .duaa:hover{
+            transform: scale(1.06);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+        #services .layanan .tigaa:hover{
+            transform: scale(1.06);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+        #services .layanan .empat:hover{
+            transform: scale(1.06);
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.705);
+            transition: all 0.1s ease;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0));
+            color: #ebf3ed;
+        }
+
+        #services .layanan .satuu p{
+            font-size: 14px;
+        }
+        #services .layanan .duaa p{
+            font-size: 14px;
+        }
+        #services .layanan .tigaa p{
+            font-size: 14px;
+        }
+        #services .layanan .empat p{
+            font-size: 14px;
+        }
+        
+        #testimoni{
+            width: 100%;
+            color: white;
+            padding: 30px 20px; 
+            
+        }
+
+        #testimoni .respon{
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap;
+            
+        }
+        #testimoni .respon .pertama img{
+            width: 50px;
+            border-radius: 350px;
+        }
+        #testimoni .respon .kedua img{
+            width: 70px;
+            border-radius: 150px;
+        }
+        #testimoni .respon .ketiga img{
+            width: 70px;
+            border-radius: 140px;
+        }
+
+
+        #testimoni .respon .pertama{
+            height: auto;
+            margin: 10px; 
+            padding: 20px; 
+            border-radius: 15px;
+            border: 1px solid #ddd; 
+            width: 250px;
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+        #testimoni .respon .kedua{
+            height: auto;
+            margin: 10px; 
+            padding: 20px; 
+            border-radius: 15px;
+            border: 1px solid #ddd; 
+            width: 250px;
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+        #testimoni .respon .ketiga{
+            height: auto;
+            margin: 10px; 
+            padding: 20px; 
+            border-radius: 15px;
+            border: 1px solid #ddd; 
+            width: 250px;
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+        #testimoni .respon .pertama:hover{
+            transform: scale(1.04);
+            background-color: #4d4b4ba1;
+        }
+        #testimoni .respon .kedua:hover{
+            transform: scale(1.04);
+            background-color: #4d4b4ba1;
+        }
+        #testimoni .respon .ketiga:hover{
+            transform: scale(1.04);
+            background-color: #4d4b4ba1;
+        }
+
+        #contact{
+            color: white; 
+            padding: 30px 20px; 
+
+        }
+        #contact .email, .phone{
+            border: 1px solid white;
+            display: flex;
+            padding: 18px;
+            width: 250px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        #contact .email svg{
+            margin-right: 10px;
+            width: 50px;
+        }
+        #contact .phone svg{
+            margin-right: 10px;
+            width: 50px;
+        }
+
+
+
+        footer{
+            color: white; 
+            text-align: center; 
+            font-size: 13px;
+        }
+        @media (max-width:740px){
+            #home{
+                background-position:  left top;
+                background-size: auto;
+            }
+            #about .tentang .satu,  #about .tentang .dua,  #about .tentang .tiga{
+                margin: 0;
+                margin-bottom: 15px;
+            }
+            #services .layanan .satuu, .duaa, .tigaa, .empat{
+                width:100%;
+            };
+        };
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h2>PELATIHAN HTML</h2>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang</a>
+            <a href="#services">Layanan</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <h2>Selamat Datang di Pelatihan</h2>
+        <h3>Ayo Belajar Bersama Kami!</h3>
+        <p >Belajar membuat website pertamamu</p>
+        <button>Mulai Belajar</button>
+    </section>
+<div>
+    <!-- Tentang -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p>Kami adalah penyedia pelatihan pemrograman web yang dirancang untuk pemula yang ingin memulai karir di bidang ini.</p>
+        
+        <div class="tentang">
+            <div class="satu">
+                <h3>Mudah Dipahami</h3>
+                <p>Materi disampaikan dengan bahasa yang sederhana</p>
+            </div>
+            <div class="dua">
+                <h3>Pelatihan Langsung</h3>
+                <p>Belajar sambil langsung mempraktikkan kode</p>
+            </div>
+            <div class="tiga">
+                <h3>Gratis</h3>
+                <p>Tidak dikenakan biaya untuk pelatihan dasar html</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan -->
+    <section id="services">
+        <h2>Apa yang kami tawarkan?</h2>
+        <p>Layanan pelatihan interaktif yang kami sediakan untuk membantu Anda memahami dasar-dasar HTML dengan mudah dan menyenangkan.</p>
+        
+        <div class="layanan">
+            <div class="satuu">
+                <h3>HTML Dasar</h3>
+                <p>Belajar struktur dasar HTML</p>
+            </div>
+            <div class="duaa">
+                <h3>Form HTML</h3>
+                <p>Membuat form interaktif</p>
+            </div>
+            <div class="tigaa">
+                <h3>Tabel HTML</h3>
+                <p>Mengatur data dalam tabel</p>
+            </div>
+            <div class="empat">
+                <h3>Best Practice</h3>
+                <p>Struktur HTML yang rapi dan semantik</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni">
+        <h2>Apa Kata Peserta?</h2>
+        
+        <div class="respon">
+            <div class="pertama">
+                <img src="foto isagi.jpg">
+                <p><em>"Pelatihannya sangat mudah dipahami untuk pemula seperti saya. Setelah pelatihan ini, saya bisa membuat website pertama saya sendiri!"</em></p>
+                <p><strong>- Isagi, Mahasiswa</strong></p>
+            </div>
+            <div class="kedua">
+                <img src="ruka-babymonster.jpeg">
+                <p><em>"Pelatihannya sangat praktis dan langsung bisa diterapkan. Tidak cuma teori, tapi langsung praktik!"</em></p>
+                <p><strong>- Ruka, Freelance Web Developer</strong></p>
+            </div>
+            <div class="ketiga">
+                <img src="haruka.jpg">
+                <p><em>"Instrukturnya ramah dan sabar dalam menjelaskan. Saya yang sebelumnya gaptek jadi paham HTML dengan cepat"</em></p>
+                <p><strong>- Sakura, Guru</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact">
+        <h2>Hubungi Kami</h2>
+        <div class="email">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+            </svg>
+            <p><strong>Email<br>info@pelatihanhtml.com </strong></p>
+        </div>
+        <div class="phone">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            <p><strong>Telepon <br> (021) 123-4567</strong></p>
+        </div>
+    </section>
+</div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Pelatihan HTML Dasar. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>
